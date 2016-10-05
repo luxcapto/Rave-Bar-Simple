@@ -43,9 +43,12 @@ void loop() {
 }
 
 void runWilson() {
-  for (int i=0; i<59; i++) {
+  for (int i=0; i<58; i++) {
     turnOnS1(wilson_sky_red[i], wilson_sky_green[i], wilson_sky_blue[i], 0);
-    delay(100);
+    turnOnS2(wilson_water_red[i], wilson_water_green[i], wilson_water_blue[i], 0);
+    S_1.show();
+    S_2.show();
+    delay(500);
   }
 }
 
@@ -53,7 +56,7 @@ void turnOnS1(int r, int g, int b, int onTime) {
   for (int i=0; i<72; i++) {
     S_1.setPixelColor(i, S_1.Color(r,g,b));
   }
-  S_1.show();
+//  S_1.show();
   delay(onTime);
 }
 
@@ -61,10 +64,9 @@ void turnOnS2(int r, int g, int b, int onTime) {
   for (int i=0; i<72; i++) {
     S_2.setPixelColor(i, S_2.Color(r,g,b));
   }
-  S_2.show();
+//  S_2.show();
   delay(onTime);
 }
-
 
 void turnOffAll() {
   turnOffS1();
@@ -84,5 +86,3 @@ void turnOffS2() {
   } 
   S_2.show();
 }
-
-
