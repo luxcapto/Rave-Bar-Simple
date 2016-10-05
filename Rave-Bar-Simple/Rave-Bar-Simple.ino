@@ -37,11 +37,13 @@ void setup() {
 
 void loop() {
   runWilson();
+  turnOffAll();
+  delay(1000);
+  
 }
 
 void runWilson() {
-  //for strip 1, grab array at [0] and send to rgb
-  for (int i=0; i<58; i++) {
+  for (int i=0; i<59; i++) {
     turnOnS1(wilson_sky_red[i], wilson_sky_green[i], wilson_sky_blue[i], 0);
     delay(100);
   }
